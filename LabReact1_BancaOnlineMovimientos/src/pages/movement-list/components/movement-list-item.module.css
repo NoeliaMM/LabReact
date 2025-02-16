@@ -1,0 +1,28 @@
+.row {
+    display:grid;
+    grid-template-columns: 15% 20%  1fr  20% 20%;
+    gap:1px;
+}
+
+.row:nth-child(odd){
+    background-color: var(--table-row-odd-color);
+}
+
+.data-cell {
+    font-size:16px;
+    padding: 15px;
+    color: var(--secondary-color);
+    align-self:center;
+}
+
+.align-right{
+    text-align: right;
+}
+
+.negative {
+    color: red;
+}
+
+.currency::after{
+    content: " €";
+}

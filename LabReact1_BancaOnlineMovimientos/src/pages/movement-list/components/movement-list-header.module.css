@@ -1,0 +1,36 @@
+.header-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: end;
+    border-bottom: 5px solid var( --secondary-color);
+    /* padding-bottom: 15px; */
+    margin-bottom: 15px;
+}
+
+.header-container h1 {
+    font-size: 2.2em;
+    font-weight: 300;
+}
+
+.label-balance{
+    font-size: 0.8em;
+    font-weight: bold;
+}
+.balance{
+    color: var(--primary-color);
+    font-size:1.5em;
+    font-weight:var(--table-header-font-weight);
+    text-align: end;
+}
+
+.header-container-account{
+    display:flex;
+    justify-content: space-between; 
+    padding-bottom: 15px;
+    margin-top: -10px;
+    font-weight: bold;
+}
+
+.currency::after{
+    content: " €";
+}
