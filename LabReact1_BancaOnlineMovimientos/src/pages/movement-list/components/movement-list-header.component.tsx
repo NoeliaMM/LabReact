@@ -26,15 +26,15 @@ export const MovementListHeaderComponent: React.FC<Props> = (props) => {
         <div className={classes.headerContainer}>
           <h1>Saldos y Últimos movimientos</h1>
           <div>
-            <p className={classes.labelBalance}>SALDO DISPONIBLE</p>
+            <p className={classes.labelBalance}>{infoAccount.balance ? "SALDO DISPONIBLE" :""}</p>
             <p className={`${classes.balance} ${infoAccount.balance ? classes.currency:''}`}>{infoAccount.balance}</p>
           </div>
         </div>
         <div className={classes.headerContainerAccount}>
-          <span className={classes.accountAlias}>
-            Alias: {infoAccount.name}
+          <span className={classes.accountAlias}>              
+              {infoAccount.name ? `Alias: ${infoAccount.name}` : ""}
           </span>
-          <span className={classes.accountIban}>IBAN: {infoAccount.iban}</span>
+          <span className={classes.accountIban}> {infoAccount.iban ? `IBAN: ${infoAccount.iban}` : ""}</span>
         </div>      
     </>
   );

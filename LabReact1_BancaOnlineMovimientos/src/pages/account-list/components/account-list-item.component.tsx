@@ -3,7 +3,7 @@ import { AccountVm } from "../account-list.vm";
 import classes from "./account-list-item.component.module.css";
 
 import { generatePath, Link, useNavigate } from "react-router-dom";
-import { appRoutes } from "@/core/router";
+import { appRoutes} from "@/core/router";
 
 const ACTION_NONE = "";
 const ACTION_TRANSFER = "1";
@@ -29,17 +29,18 @@ export const AccountListItemComponent: React.FC<Props> = (props) => {
         );
         break;
       case ACTION_MOVEMENTS:
-        navigate(generatePath(appRoutes.movements, { id: accountItem.id }));
+        navigate(generatePath(appRoutes.movements, { accountId: accountItem.id }));
         break;
     }
   };
 
-  return (    
+  return (
     <div className={classes.row}>
       <span className={`${classes.dataCell} ${classes.bold}`}>
-        <Link to={generatePath(appRoutes.movements, { id: accountItem.id })}>
-          {accountItem.iban}
-        </Link>
+      <Link to={generatePath(appRoutes.movements, { accountId: accountItem.id })}>
+        {accountItem.iban}
+      </Link>
+
       </span>
       <span className={classes.dataCell}>{accountItem.name}</span>
       <span className={`${classes.dataCell} ${classes.alignRight}`}>
