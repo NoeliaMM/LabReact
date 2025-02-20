@@ -1,0 +1,51 @@
+.grid-container {
+    max-width: 100%;
+    overflow-x: auto;   
+    display: block; /* Asegura que el scroll se active */
+}
+
+.grid-container::-webkit-scrollbar {
+    width:8px; 
+    height:8px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.grid-container:hover::-webkit-scrollbar {
+    opacity: 1; 
+}
+
+.grid-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 1px;   
+}
+
+.grid-container::-webkit-scrollbar-thumb {
+    background: #888; /* Color del "thumb" (barra de desplazamiento) */
+    border-radius: 10px;
+}
+
+.grid-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cambio de color al pasar el mouse */
+}
+
+
+.grid-table{
+    min-width: 800px;
+}
+
+.header-table{
+    display:grid;
+    grid-template-columns: 30% 12% repeat(2,17%) 1fr;
+    gap:1px;
+}
+
+.header-cell{
+    padding:10px;
+    color: var(--table-header-color);
+    background-color: var(--table-header-bg);
+    font-size: var(--table-header-font-size);
+    font-weight: var(--table-header-font-weight);
+    
+}
+
