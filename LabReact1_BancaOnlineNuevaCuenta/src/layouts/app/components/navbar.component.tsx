@@ -11,7 +11,7 @@ export const NavbarComponent: React.FC = () => {
   return (
     <nav className={classses.navbar}>
       <ul className={classses.list}>
-        <ItemLink route= {appRoutes.accountList} prefix={routesPrefixes.accountList} label="Mis cuentas" />
+        <ItemLink route= {appRoutes.accountList} prefix={[routesPrefixes.accountList, routesPrefixes.createAccount]}  label="Mis cuentas" />
         <ItemLink route= {generatePath(appRoutes.movements, { accountId: ''})} prefix={routesPrefixes.movements} label="Movimientos"/>       
         <ItemLink route= {appRoutes.transfer} prefix={routesPrefixes.transfer} label="Transferencias" />
       </ul>

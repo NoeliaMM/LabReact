@@ -7,8 +7,6 @@ const urlAccount = `${import.meta.env.VITE_BASE_API_URL}${routesPrefixes.account
 
 export const getMovements = (accountId?: string): Promise<MovementApiModel[]> => {  
 
-  console.log("Final URL:", urlMovements, "Params:", { accountId });
-
   return Axios.get<MovementApiModel[]>(urlMovements, {
     params: accountId ? { accountId } : {},
   })

@@ -1,5 +1,3 @@
-
-
 .form-container {
   border: none;
   border-bottom: 1px solid var(--secondary-color);
@@ -34,17 +32,6 @@
   text-align: right;
 }
 
-.large { 
-  width: 400px; 
-  } 
-  
-.small { 
-width: 100px; 
-} 
-
-.input-date{
-    margin-right: 48px;
-    width: 150px
+.medium {
+  width: 300px;
 }
-
-

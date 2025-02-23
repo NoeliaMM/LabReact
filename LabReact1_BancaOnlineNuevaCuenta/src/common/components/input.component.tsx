@@ -1,6 +1,5 @@
 import { ErrorComponent } from "@/common/components";
 import React, { ReactNode } from "react";
-// import classes from "./input.component.module.css"
 
 
 interface Props {
@@ -9,20 +8,25 @@ interface Props {
   type?: string;
   name: string;
   error: string;
+  className?: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const InputComponent: React.FC<Props> = (props) => {
-  const { infoLabel,label, type, name, error, onChange } = props;
+  const { infoLabel,label, type, name, error,className, onChange } = props;
 
   return (
-    <div>
-      <p>{infoLabel}</p>
+    <>
       <div>
+      <p>{infoLabel}</p>   
       <label  htmlFor={name}>{label}</label>
-      <input name={name} type={type} onChange={onChange} />
-        <ErrorComponent error={error}/>
-      </div>
-    </div>
+      <input 
+      className={className}
+      name={name} 
+      type={type} 
+      onChange={onChange} />
+      <ErrorComponent error={error}/>
+      </div>    
+    </>
   );
 };

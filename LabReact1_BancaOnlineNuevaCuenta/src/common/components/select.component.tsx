@@ -14,17 +14,19 @@ interface Props {
   value: string | number;
   options: Option[];
   error: string;
+  className?: string;
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 export const SelectComponent: React.FC<Props> = (props) => {
-  const { infoLabel,label,  name, value,options, error, onChange } = props;
+  const { infoLabel,label,  name, value,options, error,className, onChange } = props;
 
   return (
         <div>
-          <div><p>{infoLabel}</p></div>
+         <p>{infoLabel}</p>
           <label>{label}</label>
           <select
+            className= {className || ""}
             name={name}
             onChange={onChange}
             value={value}
@@ -38,6 +40,6 @@ export const SelectComponent: React.FC<Props> = (props) => {
           
           </select>         
            <ErrorComponent error={error}/>
-        </div>
+        </div>        
   );
 };

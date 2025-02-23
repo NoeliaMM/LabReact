@@ -23,6 +23,22 @@
       "name": "Ahorro",
       "balance": 8500,
       "lastTransaction": "2019-11-15T08:29:04"
+    },
+    {
+      "iban": "DO22 AVWN 9261 7100 2009 0010 7621",
+      "name": "Prueba",
+      "type": "1",
+      "balance": 0,
+      "lastTransaction": "2025-02-23T20:46:30.959Z",
+      "id": "sa8lmIl"
+    },
+    {
+      "iban": "IS77 0607 3075 0142 0771 0096 82",
+      "name": "Nominas",
+      "type": "3",
+      "balance": 0,
+      "lastTransaction": "2025-02-23T21:16:56.086Z",
+      "id": "2pSuiXS"
     }
   ],
   "movements": [
@@ -108,5 +124,39 @@
       "accountId": "3"
     }
   ],
-  "transfer": []
+  "transfer": [
+    {
+      "accountId": "1",
+      "iban": "GB33BUKB20201555555555",
+      "name": "yo",
+      "amount": "143",
+      "concept": "Prueba",
+      "notes": "",
+      "transferDate": "Sat Feb 22 2025",
+      "realTransferDate": "",
+      "id": 1
+    },
+    {
+      "accountId": "sa8lmIl",
+      "iban": "DO22 AVWN 9261 7100 2009 0010 7621",
+      "name": "yo",
+      "amount": "500",
+      "concept": "probando",
+      "notes": "ninguna",
+      "transferDate": "Sun Feb 23 2025",
+      "realTransferDate": "",
+      "id": 2
+    },
+    {
+      "accountId": "3",
+      "iban": "DO22 AVWN 9261 7100 2009 0010 7621",
+      "name": "Yo",
+      "amount": "1000",
+      "concept": "transferencia puntual",
+      "notes": "",
+      "transferDate": "Sun Feb 23 2025",
+      "realTransferDate": "",
+      "id": 3
+    }
+  ]
 }

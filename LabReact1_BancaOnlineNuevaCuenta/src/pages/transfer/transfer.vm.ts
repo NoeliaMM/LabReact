@@ -12,7 +12,7 @@ export interface TransferVm {
     concept: string; 
     notes: string; 
     dateTransfer: string; 
-    realDateTransfer?: Date; 
+    realDateTransfer?: string; 
     email: string; 
   } 
 
@@ -52,12 +52,3 @@ export interface TransferVm {
     email: ""
   });
 
-  export interface FieldValidationResult {
-    succeeded: boolean;
-    errorMessage?:string;
-  }
-
-  export interface FormValidationResult {
-    succeeded: boolean;
-    errors: TransferError;
-  }

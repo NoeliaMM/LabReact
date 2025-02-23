@@ -1,9 +1,5 @@
+import { INVALID_AMOUNT_MESSAGE, INVALID_EMAIL_MESSAGE, INVALID_IBAN_MESSAGE, INVALID_REAL_DATE_TRANSFER_MESSAGE, REQUIRED_FIELD_MESSAGE } from '@/common/validations/validation.const';
 import {validateIBANField,
-    INVALID_IBAN_MESSAGE,
-    REQUIRED_FIELD_MESSAGE, 
-    INVALID_AMOUNT_MESSAGE,
-    INVALID_REAL_DATE_TRANSFER_MESSAGE,
-    INVALID_EMAIL_MESSAGE,
     validateAccountIdField, 
     validateNameField,
     validateAmountField,
@@ -116,14 +112,14 @@ describe("transfer-field.validation spec",()=>{
       
             test.each([
                 [null, { succeeded: true }],
-                [today, { succeeded: false, errorMessage: INVALID_REAL_DATE_TRANSFER_MESSAGE }],
-                [date1, { succeeded: true}],
-                [date2, { succeeded: false, errorMessage:INVALID_REAL_DATE_TRANSFER_MESSAGE}]       
+                [today.toDateString(), { succeeded: false, errorMessage: INVALID_REAL_DATE_TRANSFER_MESSAGE }],
+                [date1.toDateString(), { succeeded: true}],
+                [date2.toDateString(), { succeeded: false, errorMessage:INVALID_REAL_DATE_TRANSFER_MESSAGE}]       
             ])(
               "Deberia devolver para la fecha %s el valor %s y el mensaje %s",
-              (dateTest: Date | null | undefined, expected: { succeeded: boolean; errorMessage?: string | null }) => {                      
+              (dateTest: string | null | undefined, expected: { succeeded: boolean; errorMessage?: string | null }) => {                      
                
-                const result = validateRealDateField(dateTest as Date |undefined);
+                const result = validateRealDateField(dateTest);
                 
                 expect(result.succeeded).toEqual(expected.succeeded);
                 

@@ -51,12 +51,12 @@ describe("plain.validation", () => {
       date2.setDate(date2.getDate() - 3);
 
       test.each([
-        [today, false],
-        [date1, true],
-        [date2, false]     
+        [today.toDateString(), false],
+        [date1.toDateString(), true],
+        [date2.toDateString(), false]     
       ])(
         "Deberia devolver para la fecha %s el valor %s",
-        (dateTest: Date, expected: boolean) => {
+        (dateTest: string , expected: boolean) => {
           expect(isDateAfterToday(dateTest)).toBe(expected);
         }
       );

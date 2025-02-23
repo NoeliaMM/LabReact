@@ -6,10 +6,13 @@ import { AccountListTableComponent } from "./components";
 import { getAccountList } from "./api/account-list.api";
 import { mapAccountListFromApiToVm } from "./account-list.mapper";
 import { HeaderPageComponent } from "@/common/components";
-
+import { generatePath, useNavigate } from "react-router-dom";
+import { appRoutes } from "@/core/router";
 
 export const AccountListPage: React.FC = () => {
   const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
+
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     getAccountList().then((result) =>
@@ -17,13 +20,17 @@ export const AccountListPage: React.FC = () => {
     );
   }, []);
 
+  const handleNewAccount = () => {
+    navigate(generatePath(appRoutes.createAccount));
+  };
+
   return (
     <AppLayout>
-      <div className={classes.root}>     
+      <div className={classes.root}>
         <HeaderPageComponent
           title="Mis cuentas"
           buttonText="AGREGAR NUEVA CUENTA"
-          action={() => console.log("Próximamente")}
+          action={() => handleNewAccount()}
         />
         <AccountListTableComponent accountList={accountList} />
       </div>

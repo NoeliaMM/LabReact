@@ -29,10 +29,10 @@ export const LoginFormComponent: React.FC<Props> = (props) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const { succedded, errors } = validateForm(credentials);
+    const { succeeded, errors } = validateForm(credentials);
     setErrors(errors);
 
-    if (succedded) {
+    if (succeeded) {
       onLogin(credentials);
     } else {
       console.log("Credenciales no son válidas");
